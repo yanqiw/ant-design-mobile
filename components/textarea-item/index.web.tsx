@@ -138,7 +138,7 @@ export default class TextareaItem extends React.Component<TextareaItemProps, Tex
         } catch (e) { }
       }, 0);
     }
-  };
+  }
 
   onErrorClick = () => {
     if (this.props.onErrorClick) {
