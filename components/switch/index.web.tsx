@@ -10,6 +10,7 @@ export default class Switch extends React.Component<SwitchProps, any> {
     disabled: false,
     onChange() {},
     platform: 'cross',
+    onClick() {},
   };
 
   onChange = (e) => {
@@ -19,25 +20,47 @@ export default class Switch extends React.Component<SwitchProps, any> {
     }
   }
 
+  onClick = (e) => {
+    if (this.props.onClick) {
+      let val;
+      if (e && e.target && e.target.checked !== undefined) {
+        val = e.target.checked;
+      } else {
+        val = this.props.checked;
+      }
+      this.props.onClick(val);
+    }
+  }
+
   render() {
     let { prefixCls, style, name, checked, disabled, className, platform } = this.props;
-    const isAndroid = platform === 'android' || (platform === 'cross' && !!navigator.userAgent.match(/Android/i));
+    const isAndroid = platform === 'android' ||
+      (platform === 'cross' && typeof navigator !== 'undefined' && !!navigator.userAgent.match(/Android/i));
     const wrapCls = classNames({
       [`${prefixCls}`]: true,
       [className as string]: className,
       [`${prefixCls}-android`]: isAndroid,
     });
 
-    return (<label className={wrapCls} style={style}>
+    const fackInputCls = classNames({
+      [`checkbox`]: true,
+      [`checkbox-disabled`]: disabled,
+    });
+
+    return (<label className={wrapCls} style={style} role="switch">
         <input
           type="checkbox"
           name={name}
           className={`${prefixCls}-checkbox`}
-          {...(disabled ? { disabled: 'disabled' } : '') }
+          disabled={disabled}
           checked={checked}
           onChange={this.onChange}
+          {...(!disabled ? { onClick: this.onClick } : {})}
         />
-        <div className="checkbox" />
+        <div
+          className={fackInputCls}
+          {...(disabled ? { onClick: this.onClick } : {})}
+        />
       </label>);
   }
 }

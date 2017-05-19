@@ -3,6 +3,8 @@ import React from 'react';
 function noop() {}
 
 export interface SearchBarProps {
+  style?: any;
+  defaultValue?: string;
   value?: string;
   placeholder?: string;
   onSubmit?: Function;
@@ -18,7 +20,6 @@ export interface SearchBarProps {
   focused?: boolean;
   /** web only */
   prefixCls?: string;
-  style?: React.CSSProperties;
   className?: string;
   onClear?: Function;
 }

@@ -10,7 +10,7 @@
 
 .@{sliderPrefixCls} {
   position: relative;
-  margin: 32px 0px;
+  margin: 32px 0;
 
   &-rail {
     position: absolute;
@@ -39,20 +39,18 @@
     width: 44px;
     height: 44px;
     cursor: pointer;
-    border-radius: 50%;
+    border-radius: @radius-circle;
     border: @border-width-lg solid @brand-primary;
     background-color: @fill-base;
+    box-sizing: border-box;
 
     &:focus {
       background-color: tint(@brand-primary, 20%);
-      background: #000;
     }
 
-    &-active {
-      &:active {
-        background-color: tint(@brand-primary, 20%);
-        box-shadow: 0 0 5px tint(@brand-primary, 20%);
-      }
+    &:active {
+      background-color: tint(@brand-primary, 20%);
+      box-shadow: 0 0 5px tint(@brand-primary, 20%);
     }
   }
 
@@ -93,14 +91,17 @@
     border: @border-width-lg solid @border-color-base;
     background-color: @fill-base;
     cursor: pointer;
-    border-radius: 50%;
+    border-radius: @radius-circle;
     vertical-align: middle;
+
     &:first-child {
       margin-left: -8px;
     }
+
     &:last-child {
       margin-left: -8px;
     }
+
     &-active {
       border-color: @brand-primary;
     }
@@ -108,6 +109,7 @@
 
   &-disabled {
     opacity: @opacity-disabled;
+
     .@{sliderPrefixCls}-track {
       height: 4px;
     }
@@ -116,6 +118,7 @@
     .@{sliderPrefixCls}-mark-text,
     .@{sliderPrefixCls}-dot {
       cursor: not-allowed;
+      box-shadow: none;
     }
   }
 }

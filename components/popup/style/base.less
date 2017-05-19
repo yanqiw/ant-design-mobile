@@ -1,15 +1,4 @@
 .@{PopupPrefixCls} {
-  &-wrap {
-    position: fixed;
-    overflow: auto;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 1050;
-    -webkit-overflow-scrolling: touch;
-    outline: 0;
-  }
   &-mask {
     position: fixed;
     top: 0;
@@ -19,6 +8,7 @@
     background-color: @fill-mask;
     height: 100%;
     z-index: @popup-zindex;
+
     &-hidden {
       display: none;
     }

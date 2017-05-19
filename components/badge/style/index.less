@@ -26,10 +26,12 @@
     transform: translateX(-45%);
     transform-origin: -10% center;
     z-index: 10;
-    font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","\5FAE\8F6F\96C5\9ED1",SimSun,sans-serif;
+    font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "\5FAE\8F6F\96C5\9ED1", SimSun, sans-serif;
+
     a {
       color: @color-text-base-inverse;
     }
+
     p {
       margin: 0;
       padding: 0;
@@ -41,15 +43,20 @@
   }
 
   &-dot {
-  	position: absolute;
-  	transform: translateX(-50%);
-  	transform-origin: 0 center;
+    position: absolute;
+    transform: translateX(-50%);
+    transform-origin: 0 center;
     top: -2 * @border-width-lg;
     height: 0.5 * @link-button-font-size;
     width: 0.5 * @link-button-font-size;
     border-radius: 100%;
     background: @brand-important;
     z-index: 10;
+
+    &-large {
+      height: @link-button-font-size;
+      width: @link-button-font-size;
+    }
   }
 
   &-not-a-wrapper &-text,
@@ -61,19 +68,20 @@
   }
 
   &-corner {
-  	width: 5 * @link-button-font-size;
-  	padding: 0.5 * @link-button-font-size;
-  	position: absolute;
-  	right: -2 * @link-button-font-size;
-  	top: 0.5 * @link-button-font-size;
-  	background-color: @brand-important;
-  	color: @color-text-base-inverse;
-  	white-space: nowrap;
-  	transform: rotate(45deg);
-  	text-align: center;
+    width: 5 * @link-button-font-size;
+    padding: 0.5 * @link-button-font-size;
+    position: absolute;
+    right: -2 * @link-button-font-size;
+    top: 0.5 * @link-button-font-size;
+    background-color: @brand-important;
+    color: @color-text-base-inverse;
+    white-space: nowrap;
+    transform: rotate(45deg);
+    text-align: center;
     font-size: @font-size-subhead;
-  	&-wrapper {
-  	  overflow: hidden;
-  	}
+
+    &-wrapper {
+      overflow: hidden;
+    }
   }
 }

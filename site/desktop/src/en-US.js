@@ -6,6 +6,7 @@ module.exports = {
   messages: {
     'app.header.menu.home': 'Home',
     'app.header.menu.components': 'Components',
+    'app.header.menu.design': 'Specification',
     'app.header.lang': '中文',
     'app.home.slogan': 'Mobile Design Specification',
     'app.home.centerSlogan': 'Mobile Design Specification & FrontEnd Framwork',
@@ -15,7 +16,7 @@ module.exports = {
     'app.footer.discuss': 'Chat Room',
     'app.footer.community': 'Community',
     'app.footer.bug-report': 'Bug Report',
-    'app.footer.motion': 'Motion Soluction',
+    'app.footer.motion': 'Motion Solution',
     'app.footer.antux': 'Sitemap Template',
     'app.footer.author': 'Created by Ant UED',
     'app.ComponentDoc.codeTitle': 'Code Example',

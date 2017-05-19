@@ -1,7 +1,7 @@
 /* tslint:disable:no-console */
 import React from 'react';
 import { View } from 'react-native';
-import {Stepper, List} from 'antd-mobile';
+import { Stepper, List } from 'antd-mobile';
 
 function onChange(value) {
   console.log('changed', value);
@@ -20,7 +20,7 @@ export default class StepperExample extends React.Component<any, any> {
           </List.Item>
           <List.Item extra={readOnly} >readOnly: false</List.Item>
           <List.Item extra={<Stepper key="2" disabled max={10} min={1} defaultValue={3} onChange={onChange} />}>
-            禁用
+            Disabled
           </List.Item>
         </List>
       </View>

@@ -15,17 +15,17 @@ import { RefreshControl, ListView } from 'antd-mobile';
 const data = [
   {
     img: 'https://zos.alipayobjects.com/rmsportal/dKbkpPXKfvZzWCM.png',
-    title: '相约酒店',
+    title: 'Meet hotel',
     des: '不是所有的兼职汪都需要风吹日晒',
   },
   {
     img: 'https://zos.alipayobjects.com/rmsportal/XmwCzSeJiqpkuMB.png',
-    title: '麦当劳邀您过周末',
+    title: 'McDonald\'s invites you',
     des: '不是所有的兼职汪都需要风吹日晒',
   },
   {
     img: 'https://zos.alipayobjects.com/rmsportal/hfVtzEhPzTUewPm.png',
-    title: '食惠周',
+    title: 'Eat the week',
     des: '不是所有的兼职汪都需要风吹日晒',
   },
 ];
@@ -59,9 +59,6 @@ class App extends React.Component {
       });
     }, 1000);
   };
-  onScroll = () => {
-    console.log('sss');
-  };
   render() {
     const separator = (sectionID, rowID) => (
       <div
@@ -90,10 +87,10 @@ class App extends React.Component {
             {obj.title}
           </h3>
           <div style={{ display: '-webkit-box', display: 'flex' }}>
-            <img style={{ height: '1.28rem', marginRight: '0.08rem' }} src={obj.img} />
+            <img style={{ height: '1.28rem', marginRight: '0.08rem' }} src={obj.img} alt="icon" />
             <div style={{ display: 'inline-block' }}>
-              <p>{obj.des}-{rowData}</p>
-              <p><span style={{ fontSize: '1.6em', color: '#FF6E27' }}>35</span>元/任务</p>
+              <div style={{ margin: '0.1rem 0 0.2rem 0' }}>{obj.des}-{rowData}</div>
+              <div><span style={{ fontSize: '1.6em', color: '#FF6E27' }}>35</span>元/任务</div>
             </div>
           </div>
         </div>
@@ -108,7 +105,6 @@ class App extends React.Component {
         pageSize={5}
         scrollRenderAheadDistance={200}
         scrollEventThrottle={20}
-        onScroll={this.onScroll}
         style={{
           height: document.documentElement.clientHeight,
           border: '1px solid #ddd',

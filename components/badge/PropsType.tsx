@@ -3,8 +3,8 @@ interface BadgeProps {
   overflowCount?: number;
   corner?: boolean;
   dot?: boolean;
-  text?: string;
-  style?: {};
+  text?: any;
+  style?: any;
   /** rn only */
   styles?: any;
   /** web only */

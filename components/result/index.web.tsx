@@ -12,7 +12,18 @@ export default class Result extends React.Component<ResultProps, any> {
   };
 
   render() {
-    const { prefixCls, className, img, imgUrl, title, message, buttonText, buttonClick, buttonType } = this.props;
+    const {
+      prefixCls,
+      className,
+      img,
+      imgUrl,
+      title,
+      message,
+      buttonText,
+      buttonClick,
+      buttonType,
+      style,
+    } = this.props;
     const wrapCls = classNames({
       [`${prefixCls}`]: true,
       [className as string]: className,
@@ -26,13 +37,13 @@ export default class Result extends React.Component<ResultProps, any> {
     }
 
     return (
-      <div className={wrapCls}>
+      <div className={wrapCls} style={style} role="alert">
         {imgContent}
-        {title ? <div className={`${prefixCls}-title`}>{title}</div> : null }
-        {message ? <div className={`${prefixCls}-message`}>{message}</div> : null }
+        {title ? <div className={`${prefixCls}-title`}>{title}</div> : null}
+        {message ? <div className={`${prefixCls}-message`}>{message}</div> : null}
         {buttonText ? <div className={`${prefixCls}-button`}>
           <Button type={buttonType} onClick={buttonClick}>{buttonText}</Button>
-        </div> : null }
+        </div> : null}
       </div>
     );
   }

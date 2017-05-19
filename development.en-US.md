@@ -38,7 +38,7 @@ component name separate with `-`, such as `date-picker`，and file Extensions sh
 - `components/button/index.web.tsx`
 
 ```js
-import * as React from 'react';
+import React from 'react';
 
 class Button extends React.Component {
   static propTypes = {};
@@ -78,7 +78,7 @@ general we do not distinguish Android and Ios, so no suffix.
 - `components/button/index.tsx`
 
 ```jsx
-import * as React from 'react';
+import React from 'react';
 import { View, StyleSheet } from 'react-native';
 
 // just a example, may extract style to components/button/style/index.tsx
@@ -168,7 +168,7 @@ After you are done.
 $ git add --all
 $ git commit -am "some description"
 $ git pull --rebase origin master
-// fix some conflict if need be
+# fix some conflict if need be
 $ git push origin xx-feature:xx-feature
 ```
 
@@ -204,8 +204,8 @@ $ npm run test:rn
 Update snapshot：
 
 ```bash
-$ npm run test:web -- -u // Update web component's snapshots
-$ npm run test:rn -- -u // Update RN component's snapshots
+$ npm run test:web -- -u # Update web component's snapshots
+$ npm run test:rn -- -u # Update RN component's snapshots
 ```
 
 Run specific test:

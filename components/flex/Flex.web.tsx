@@ -1,18 +1,19 @@
 import React from 'react';
 import classNames from 'classnames';
-import { FlexProps } from './PropsType';
+import { FlexWebProps } from './PropsType';
 
-export default class Flex extends React.Component<FlexProps, any> {
+export default class Flex extends React.Component<FlexWebProps, any> {
   static Item: any;
 
   static defaultProps = {
     prefixCls: 'am-flexbox',
     align: 'center',
-    onClick: () => {},
   };
 
   render() {
-    let { direction, wrap, justify, align, alignContent, className, children, prefixCls, style, onClick } = this.props;
+    let {
+      direction, wrap, justify, align, alignContent, className, children, prefixCls, style, ...restProps,
+    } = this.props;
 
     const wrapCls = classNames({
       [prefixCls as string]: true,
@@ -48,7 +49,7 @@ export default class Flex extends React.Component<FlexProps, any> {
     });
 
     return (
-      <div className={wrapCls} style={style} onClick={onClick}>
+      <div className={wrapCls} style={style} {...restProps}>
         {children}
       </div>
     );
